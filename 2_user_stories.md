@@ -7,16 +7,23 @@
 	2. release
 	3. like
 	4. working
-### objects 			### Messages	
+### Objects
 person						
-bike				    release_a_bike	
+bike
 docking station 
 
 
-### objects 			### Messages
-person
-good bike			is_working
 
+### Messages
+release_a_bike
+
+
+###objects
+person
+docking_station
+
+### Messages
+is_working
 
 ### Diagram
 
