@@ -11,3 +11,8 @@ With my pair, we collaborated on a series of 22 challenges.
 - Git
 - Test Driven Development
 - RSpec
+
+
+### Contributors
+Kat Downes
+Nandhini Narasimhan
