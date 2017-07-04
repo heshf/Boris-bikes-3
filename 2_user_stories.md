@@ -8,22 +8,23 @@
 	3. like
 	4. working
 ### Objects
-person						
-bike
-docking station 
+
+1.person						
+2.bike
+3.docking station 
 
 
 
 ### Messages
-release_a_bike
+1.release_a_bike
 
 
 ###objects
-person
-docking_station
+1.person
+2.docking_station
 
 ### Messages
-is_working
+1.is_working
 
 ### Diagram
 
