@@ -26,4 +26,9 @@ end
     subject.dock(bike)
     expect(subject.bike).to eq bike
   end
+
+it "doesn't have any bikes" do
+  subject.bikes == []
+ expect {release_bike}.to raise_error("Sorry mate, no bikes left")
+  end
 end
