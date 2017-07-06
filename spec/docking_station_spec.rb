@@ -8,17 +8,12 @@ describe DockingStation do
 
   it 'releases working bikes' do
   bike = Bike.new
-  expect(bike).to be_working 
+  expect(bike).to be_working
 end
-  it { is_expected.to respond_to(:dock).with(1).argument}
-
-
-  it { is_expected. to respond_to(:bikes) }
-
 
   it 'docks a bike' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
+    expect(subject.dock(bike)).to eq [bike]
   end
 
   # it 'returns docked bikes' do. DON'T NEED bc IF NO BIKES THEN ERROR MESSAGE ANYWAY
@@ -30,5 +25,10 @@ end
 it "doesn't have any bikes" do
   subject.bikes == []
  expect {subject.release_bike}.to raise_error("Sorry mate, no bikes left")
+  end
+
+it "does not have room for more bikes" do
+  subject.bikes != []
+ expect { 2.times {subject.dock(Bike.new)} }.to raise_error("No slots available")
   end
 end

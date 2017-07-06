@@ -1,4 +1,4 @@
-require_relative 'bike'
+require './lib/bike'
 
 class DockingStation
   attr_reader :bikes
@@ -16,6 +16,11 @@ end
 # end
 
   def dock(bike)
+    if bikes.length >= 1
+    fail "No slots available"
+    else
     @bikes << bike
     end
+  end
+
 end
