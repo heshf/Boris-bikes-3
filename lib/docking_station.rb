@@ -22,19 +22,11 @@ class DockingStation
 private
 
   def full?
-    if @bikes.length >= @capacity
-      return true
-    else
-      return false
-    end
+    @bikes.length >= @capacity ? true : false
   end
 
   def empty?
-    if @bikes.empty?
-      return true
-    else
-    return false
+    @bikes.empty? ? true : false
   end
-end
 
 end
