@@ -13,16 +13,17 @@ end
 
   it 'docks a bike' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq [bike]
+    expect(subject().dock(bike)).to eq [bike]
   end
 
 it "doesn't have any bikes" do
- subject.bikes == []
- expect {subject.release_bike}.to raise_error("Sorry mate, no bikes left")
+ subject().bikes == []
+ expect {subject().release_bike}.to raise_error("Sorry mate, no bikes left")
   end
 
 it "does not have room for more bikes" do
   subject.bikes != []
- expect { (DockingStation::DEFAULT_CAPACITY+1).times {subject.dock(Bike.new)} }.to raise_error("No slots available")
+  capacity = subject().capacity
+ expect { (capacity+1).times {subject().dock(Bike.new)} }.to raise_error("No slots available")
   end
 end
