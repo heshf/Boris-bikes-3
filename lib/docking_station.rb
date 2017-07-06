@@ -3,24 +3,35 @@ require './lib/bike'
 class DockingStation
   attr_reader :bikes
 
-def initialize
+  def initialize
 	@bikes = []
-end
+  end
 
   def release_bike
-  	fail "Sorry mate, no bikes left" if bikes.empty?
+  	fail "Sorry mate, no bikes left" if empty?
   end
-
-# def bikes
-# 	return bikes = []<<Bike.new
-# end
 
   def dock(bike)
-    if bikes.length >= 20
-    fail "No slots available"
-    else
+    fail "No slots available" if full?
     @bikes << bike
+  end
+
+private
+
+  def full?
+    if @bikes.length >= 20
+      return true
+    else
+      return false
     end
   end
+
+  def empty?
+    if @bikes.empty?
+      return true
+    else
+    return false
+  end
+end
 
 end
