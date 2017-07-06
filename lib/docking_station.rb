@@ -16,7 +16,7 @@ end
 # end
 
   def dock(bike)
-    if bikes.length >= 1
+    if bikes.length >= 20
     fail "No slots available"
     else
     @bikes << bike
