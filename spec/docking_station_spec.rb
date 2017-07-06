@@ -23,6 +23,6 @@ it "doesn't have any bikes" do
 
 it "does not have room for more bikes" do
   subject.bikes != []
- expect { 21.times {subject.dock(Bike.new)} }.to raise_error("No slots available")
+ expect { (DockingStation::DEFAULT_CAPACITY+1).times {subject.dock(Bike.new)} }.to raise_error("No slots available")
   end
 end
