@@ -23,7 +23,7 @@ it "doesn't have any bikes" do
 
 before (:example) do
   @newdock = DockingStation.new
-subject.DEFAULT_CAPACITY.times { @newdock.dock(Bike.new) }
+  20.times { @newdock.dock(Bike.new) }
 end
 
 it "does not have room for more bikes" do
@@ -32,3 +32,4 @@ it "does not have room for more bikes" do
  expect {@newdock.dock(Bike.new)}.to raise_error("No slots available")
   end
 end
+
