@@ -23,7 +23,7 @@ it "doesn't have any bikes" do
 
 before (:example) do
   @newdock = DockingStation.new
-20.times { @newdock.dock(Bike.new) }
+DEFAULT_CAPACITY.times { @newdock.dock(Bike.new) }
 end
 
 it "does not have room for more bikes" do
