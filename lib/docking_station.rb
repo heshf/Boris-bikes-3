@@ -10,10 +10,11 @@ class DockingStation
   @capacity = capacity
   end
 
-  def release_bike
+  def release_bike(bike)
 
   	fail "Sorry mate, no bikes left" if empty?
-    fail "Cannot release bike as it is broken" if broken?
+    fail "Cannot release bike as it is broken" if bike.broken?
+
   end
 
   def dock(bike)
