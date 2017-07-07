@@ -32,12 +32,6 @@ describe DockingStation do
       expect {@newdock.dock(Bike.new)}.to raise_error("No slots available")
     end
 
-  it "Does not release broken bikes" do
-    broken_bike = DockingStation.new
-    broken_bike.dock(broken_bike)
-    broken_bike.broken?
-    expect {broken_bike}.to raise_error("Cannot release bike as it is broken")
-  end
 
   it 'customer can report broken bike if it is returned broken' do
     test_bike.working = false
