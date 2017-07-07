@@ -33,12 +33,6 @@ describe DockingStation do
     end
 
 
-  it 'customer can report broken bike if it is returned broken' do
-    test_bike.working = false
-    ds.dock(test_bike)
-    expect(ds.bikes.working?).to eq false
-  end
-
   it 'do not release a bike if broken' do
     bike = Bike.new
     bike.report_broken
