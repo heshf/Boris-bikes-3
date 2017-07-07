@@ -11,7 +11,9 @@ class DockingStation
   end
 
   def release_bike
+
   	fail "Sorry mate, no bikes left" if empty?
+    fail "Cannot release bike as it is broken" if broken?
   end
 
   def dock(bike)
