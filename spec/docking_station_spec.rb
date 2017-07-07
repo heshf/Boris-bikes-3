@@ -6,13 +6,13 @@ describe DockingStation do
 
     it { is_expected.to respond_to :release_bike}
 
-    it 'releases working bikes' do
-      bike = Bike.new
-      expect(bike).to be_working
-    end
+    # it 'releases working bikes' do
+    #   bike = double(:bike)
+    #   expect(bike).to be_working
+    # end
 
     it 'docks a bike' do
-      bike = Bike.new
+      bike = double(:bike)
       expect(subject.dock(bike)).to eq [bike]
     end
 
@@ -21,20 +21,15 @@ describe DockingStation do
    expect {subject.release_bike}.to raise_error("Sorry mate, no bikes left")
     end
 
-  before (:example) do
-    @newdock = DockingStation.new
-    20.times { @newdock.dock(Bike.new) }
-  end
-
   it "does not have room for more bikes" do
-    # subject.bikes != []
-    # capacity = subject().capacity
-      expect {@newdock.dock(Bike.new)}.to raise_error("No slots available")
+   @newdock = DockingStation.new
+    20.times { @newdock.dock(double(:bike)) }
+      expect {@newdock.dock(double(:bike))}.to raise_error("No slots available")
     end
 
 
   it 'do not release a bike if broken' do
-    bike = Bike.new
+    bike = double(:bike)
     bike.report_broken
     subject.dock(bike)
     expect(subject.release_bike).to raise_error "Cannot release bike as it is broken"
